@@ -11,8 +11,9 @@
   /*=====Color HSL=====*/
   --hue: 0;
   --sat: 0%;
-  --title-color: hsl(var(--hue), var(--sat), 20%);
-  --title-color-dark: hsl(var(--hue), var(--sat), 0%);
+  --title-color: hsl(var(--hue), var(--sat), 30%);
+  --border-color: hsl(var(--hue), var(--sat), 30%);
+  --title-color-dark: hsl(var(--hue), var(--sat), 2%);
   --text-color: hsl(var(--hue), var(--sat), 46%);
   --body-color: hsl(var(--hue), var(--sat), 98%);
   --container-color: #fff;
@@ -138,6 +139,29 @@ img {
   display: grid;
   gap: 1.5rem;
 }
+/*=== BreakPoints===*/
+/*for larger devices*/
+
+@media (max-width: 992px) {
+  .container {
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+  }
+}
+
+/*for medium devices*/
+@media (max-width: 768px) {
+}
+@media (max-width: 576px) {
+}
+/*for small devices*/
+@media (max-width: 350px) {
+  .container {
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+}
+
 /*===Buttons===*/
 .button {
   display: inline-block;
