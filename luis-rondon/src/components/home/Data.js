@@ -17,7 +17,7 @@ const Data = ({ onGermanSelected }) => {
   const description = onGermanSelected
     ? "Ich bin ein Entwickler aus Kuba, zuhause in Morsbach, Deutschland."
     : "I'm a developer from Cuba, based in Morsbach, Germany.";
-  const contactme = onGermanSelected ? "Guten Tag sagen" : "Say Hello";
+  const contactme = onGermanSelected ? "Hi sagen" : "Say Hello";
   return (
     <div className={classes["home__data"]}>
       <h1 className={classes["home__title"]}> {greeting}</h1>
