@@ -67,8 +67,8 @@ const About = ({ onGermanSelected }) => {
           </div>
           <p className={classes["trait__boxes-description"]}>{selectedText}</p>
           <a
-            href="../../assets/pdf/_doc_Lebenslauf_Luis_Rondon.pdf"
-            download="_doc_Lebenslauf_Luis_Rondon.pdf"
+            href="_doc_Lebenslauf_Luis_Rondon .pdf"
+            download
             className={`button ${classes["button--flex"]}`}
           >
             {onGermanSelected ? downloadDe : downloadEn}
