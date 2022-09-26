@@ -48,7 +48,7 @@ const About = ({ onGermanSelected }) => {
     );
   });
   return (
-    <section className={`${classes["about__container"]} container`}>
+    <section className={`${classes["about__container"]} container`} id="about">
       <h2 className={classes["about__container-title"]}>
         {" "}
         {onGermanSelected ? "Über mich" : " About me"}{" "}

@@ -31,14 +31,14 @@ const Home = ({ onGermanSelected }) => {
         </div>
 
         <div className={classes["scroll-downs"]}>
-          <div className={classes["mousey"]}>
+          <div className={classes["mouse"]}>
             <div className={classes["scroller"]}></div>
           </div>
           <p>{onGermanSelected ? "nach unten scrollen" : "scroll down"}</p>
         </div>
       </div>
       {isScrolled && (
-        <a href="#contact" className={`button ${classes["button--flex-up"]}`}>
+        <a href="#home" className={`button ${classes["button--flex-up"]}`}>
           <i class="uil uil-arrow-up"></i>
         </a>
       )}
