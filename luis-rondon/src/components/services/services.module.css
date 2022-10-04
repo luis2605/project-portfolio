@@ -130,6 +130,9 @@
 }
 
 @media (max-width: 425px) {
+  .text-box {
+    top: 15vh;
+  }
 }
 
 /*animations*/

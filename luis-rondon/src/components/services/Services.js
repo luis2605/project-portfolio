@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReactDOM from "react-dom";
 import classes from "./services.module.css";
 import webDevEn from "../../data/webDevEn";
 import webDevDe from "../../data/webDevDe";
@@ -166,22 +167,28 @@ const Services = ({ onGermanSelected }) => {
           </div>
         </div>
       </div>
+      {ReactDOM.createPortal(
+        <>
+          {isModalOpen && (
+            <div className={classes["overlay-textBox"]}>
+              <div className={classes["text-box"]}>
+                <span className={classes["close-icon"]}>
+                  {" "}
+                  <i onClick={closeModal} class="uil uil-times-circle"></i>
+                </span>
 
-      {isModalOpen && (
-        <div className={classes["overlay-textBox"]}>
-          <div className={classes["text-box"]}>
-            <span className={classes["close-icon"]}>
-              {" "}
-              <i onClick={closeModal} class="uil uil-times-circle"></i>
-            </span>
-
-            <div className={classes["text-box-intro"]}>
-              <h3>{modalTitle}</h3>
-              <p>{modalSubtitle}</p>
+                <div className={classes["text-box-intro"]}>
+                  <h3>{modalTitle}</h3>
+                  <p>{modalSubtitle}</p>
+                </div>
+                <div className={classes["services-list"]}>
+                  {relationedServices}
+                </div>
+              </div>
             </div>
-            <div className={classes["services-list"]}>{relationedServices}</div>
-          </div>
-        </div>
+          )}
+        </>,
+        document.getElementById("modal")
       )}
     </section>
   );

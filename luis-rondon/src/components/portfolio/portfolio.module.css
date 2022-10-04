@@ -19,15 +19,15 @@
 .selectors-title {
   margin: 2em 1em 2em 0;
   padding: 0.5em 1em;
-  background-color: var(--title-color-dark);
+  background-color: var(--text-color);
   color: white;
   border-radius: 10px;
   cursor: pointer;
 }
 .selectors-title:hover {
   background: whitesmoke;
-  color: var(--title-color-dark);
-  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  border: 1px solid rgba(63, 62, 62, 0.123);
   border-radius: 10px;
 }
 
@@ -74,4 +74,16 @@
   opacity: 0.9;
 }
 
-/*aux*/
+/*media */
+
+@media (max-width: 768px) {
+  .portfolio-items {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 648px) {
+  .portfolio-items {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
