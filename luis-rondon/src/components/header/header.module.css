@@ -58,6 +58,10 @@
 .nav__link:hover {
   color: var(--title-color-dark);
 }
+/*aux*/
+.icons-links {
+  font-size: 1.5rem;
+}
 /*===BreakingPoints===*/
 
 /*for medium devices*/
@@ -115,6 +119,16 @@
   .nav__close,
   .nav__toggle {
     display: block;
+  }
+}
+@media (min-width: 762px) {
+  .icons-links {
+    display: none;
+  }
+}
+@media (max-width: 450px) {
+  .nav__link {
+    align-items: flex-start;
   }
 }
 /*for small devices*/

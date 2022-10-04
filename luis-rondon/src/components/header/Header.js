@@ -32,7 +32,8 @@ const Header = ({ onGermanSelected, onSetGermanSelectedHandler }) => {
           className={`${classes.nav__link} ${classes["active-link"]}`}
         >
           {link.name}
-          <i className={`uil uil-estate ${classes.nav__icon}`}></i>
+
+          <span className={classes["icons-links"]}>{link.icon}</span>
         </a>
       </li>
     );

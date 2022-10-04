@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import classes from "./services.module.css";
 import webDevEn from "../../data/webDevEn";
 import webDevDe from "../../data/webDevDe";
+import webReEn from "../../data/webReEn";
+import webReDe from "../../data/webReDe";
+import webAppEn from "../../data/webAppEn";
+import webAppDe from "../../data/webAppDe";
 
 const Services = ({ onGermanSelected }) => {
+  const viewMore = onGermanSelected ? "Mehr anzeigen" : "View more";
   const services = onGermanSelected ? " Dienstleistungen" : " Services";
   const whatIcanDo = onGermanSelected
     ? "Was ich für Sie tun kann "
@@ -20,6 +25,7 @@ const Services = ({ onGermanSelected }) => {
     setIsModalOpen((prevMod) => {
       return !prevMod;
     });
+
     // changing title
 
     switch (event.target.id) {
@@ -32,7 +38,7 @@ const Services = ({ onGermanSelected }) => {
               "Selbständiger Webentwickler mit 0+ Jahren Erfahrung, der Kunden und Unternehmen qualitativ hochwertige Arbeit bietet."
             )
           : setModalSubtitle(
-              "Self thought Web developer with 0+ years of experience.Providing qualyty work to clients and companies"
+              "Self thought Web developer with 0+ years of experience.Providing quality work to clients and companies"
             );
         onGermanSelected ? setRelServices(webDevDe) : setRelServices(webDevEn);
         break;
@@ -40,11 +46,28 @@ const Services = ({ onGermanSelected }) => {
         onGermanSelected
           ? setModalTitle("Web-Neugestaltung")
           : setModalTitle("Web Redesing");
+
+        onGermanSelected
+          ? setModalSubtitle(
+              "Grundlegende Designkonzepte, die von einem nicht-professionellen Designer angewandt werden, können ebenfalls einen Unterschied machen und Ihrem Projekt einen zusätzlichen Wert verleihen."
+            )
+          : setModalSubtitle(
+              "Basic Design concepts applied by a non-profesional designer can also make a difference and add extra value to your project"
+            );
+        onGermanSelected ? setRelServices(webReDe) : setRelServices(webReEn);
         break;
       case "generalApp":
         onGermanSelected
-          ? setModalTitle("Allgemeine Web-App-Programmierung")
-          : setModalTitle("General Web-App programming");
+          ? setModalTitle(" Web-App-Programmierung")
+          : setModalTitle(" Web-App-programming");
+        onGermanSelected
+          ? setModalSubtitle(
+              "Web-Apps sind die neue, eroberte Grenze in der Web-Programmierung. Das Beste aus beiden Welten kombiniert und zu Ihrer Verfügung."
+            )
+          : setModalSubtitle(
+              "Web Apps are the new conquered frontier in web programming. The best of both worlds combined and at you dispossal."
+            );
+        onGermanSelected ? setRelServices(webAppDe) : setRelServices(webAppEn);
         break;
       default:
         //Statements executed when none of
@@ -64,8 +87,12 @@ const Services = ({ onGermanSelected }) => {
 
   const relationedServices = relServices.map((serv) => {
     return (
-      <div>
-        <i class="uil uil-check-circle"></i>
+      <div className={classes["list-element"]}>
+        <span className={classes["aproved-icon"]}>
+          {" "}
+          <i class="uil uil-check-circle"></i>
+        </span>
+
         <p>{serv.name}</p>
       </div>
     );
@@ -83,14 +110,14 @@ const Services = ({ onGermanSelected }) => {
             {" "}
             <i class="uil uil-web-grid-alt"></i>
           </span>{" "}
-          <h3>Web Development</h3>
+          <h3>{onGermanSelected ? "Web-Entwicklung" : "Web Development"}</h3>
           <div className={classes["view-more"]}>
             <p
               id="webDev"
               onClick={openModal}
               className={classes["margin-right"]}
             >
-              View more
+              {viewMore}
             </p>
             <span className={classes["arrow-animation"]}>
               {" "}
@@ -110,7 +137,7 @@ const Services = ({ onGermanSelected }) => {
               onClick={openModal}
               className={classes["margin-right"]}
             >
-              View more
+              {viewMore}
             </p>
             <span className={classes["arrow-animation"]}>
               {" "}
@@ -123,14 +150,14 @@ const Services = ({ onGermanSelected }) => {
             {" "}
             <i class="uil uil-browser"></i>
           </span>{" "}
-          <h3>General Web-App programming</h3>
+          <h3> Web-App </h3>
           <div className={classes["view-more"]}>
             <p
               id="generalApp"
               onClick={openModal}
               className={classes["margin-right"]}
             >
-              View more
+              {viewMore}
             </p>
             <span className={classes["arrow-animation"]}>
               {" "}
@@ -143,7 +170,11 @@ const Services = ({ onGermanSelected }) => {
       {isModalOpen && (
         <div className={classes["overlay-textBox"]}>
           <div className={classes["text-box"]}>
-            <i onClick={closeModal} class="uil uil-times-circle"></i>
+            <span className={classes["close-icon"]}>
+              {" "}
+              <i onClick={closeModal} class="uil uil-times-circle"></i>
+            </span>
+
             <div className={classes["text-box-intro"]}>
               <h3>{modalTitle}</h3>
               <p>{modalSubtitle}</p>
