@@ -7,6 +7,8 @@ import Skills from "./components/skills/Skills";
 import Services from "./components/services/Services";
 import Qualifications from "./components/qualifications/Qualifications";
 import Portfolio from "./components/portfolio/Portfolio";
+import Testimonials from "./components/testimonials/Testimonials";
+import Contact from "./components/contact/Contact";
 
 function App() {
   const [germanSelected, setGermanSelected] = useState(false);
@@ -27,6 +29,8 @@ function App() {
       <Services onGermanSelected={germanSelected} />
       <Qualifications onGermanSelected={germanSelected} />
       <Portfolio onGermanSelected={germanSelected} />
+      <Testimonials onGermanSelected={germanSelected} />
+      <Contact onGermanSelected={germanSelected} />
     </>
   );
 }
