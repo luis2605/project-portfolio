@@ -15,18 +15,124 @@
 
 .form__container {
   display: flex;
+  justify-content: space-around;
 }
 .left__containers {
   margin: 1em 0;
   padding: 2em 4em;
-  background: rgba(235, 233, 233, 0.699);
-  border: 1px solid var(--text-color);
+
   border-radius: 15px;
+  background: rgba(156, 152, 152, 0.04);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.3px);
+  -webkit-backdrop-filter: blur(6.3px);
+  border: 1px solid rgba(156, 152, 152, 0.06);
 }
 .left__containers-text {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+/*input style*/
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+.input-el-container {
+  margin-bottom: 2em;
+  align-self: left;
+}
+.input-text {
+  padding: 1em;
+  border: 1px solid var(--text-color);
+  border-radius: 15px;
+  width: 300px;
+}
+.input-title {
+  position: relative;
+  top: 0.7em;
+  left: 1em;
+  background-color: #fff;
+}
+.input-title-pro {
+  position: relative;
+  top: 0.7em;
+  left: 1em;
+  background-color: #fff;
+}
+.sub-btn {
+  width: 200px;
+  padding: 1em 1.5em;
+  border-radius: 15px;
+  border: 1px solid var(--text-color);
+  color: #fff;
+  background: var(--title-color-dark);
+}
+/*modal when message sent style*/
+
+.overlay-textBox {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(27, 27, 27, 0.185);
+  z-index: var(--z-modal);
+  overflow: hidden;
+}
+.text-box {
+  position: fixed;
+  background: var(--container-color);
+  width: 50%;
+  left: 20%;
+  top: 30vh;
+  border-radius: 10px;
+  padding: 3em 1em 1em 2em;
+  display: flex;
+  flex-direction: column;
+}
+.close-icon {
+  font-size: 2rem;
+  position: absolute;
+  right: 1em;
+  top: 0.2em;
+}
+.text-box-intro {
+  margin: 1em 0;
+}
+
+/*media*/
+
+@media (max-width: 992px) {
+}
+@media (max-width: 860px) {
+  .left__containers {
+    padding: 1em 1.5em;
+  }
+  .input-text {
+    width: 200px;
+  }
+}
+
+@media (max-width: 425px) {
+  .form__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .left__containers {
+    padding: 2em 4em;
+  }
+  .input-text {
+    width: 300px;
+  }
+
+  .sub-btn {
+    margin-bottom: 5em;
+  }
 }
 /*aux*/
 
