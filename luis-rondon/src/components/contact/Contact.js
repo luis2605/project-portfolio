@@ -2,14 +2,20 @@ import classes from "./contact.module.css";
 import React, { useState, useRef } from "react";
 import ReactDOM from "react-dom";
 import emailjs from "@emailjs/browser";
-
+import MessageSentModal from "../aux-comp/MessageSentModal";
+import Whatsapp from "../aux-comp/Whatsapp";
+import FBMessenger from "../aux-comp/FBMessenger";
 const Contact = ({ onGermanSelected }) => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isWhatsappOpen, setIsWhatsappOpen] = useState(false);
+  const [isMessengerOpen, setIsMessengerOpen] = useState(false);
   const form = useRef();
+
   const sendEmail = (e) => {
     e.preventDefault(); // prevents the page from reloading when you hit “Send”
 
     if (e.target[0].value.trim() !== "") {
+      // uncomment to use emailjs services to send emails
       // emailjs
       //   .sendForm(
       //     "service_o7232o8",
@@ -42,7 +48,20 @@ const Contact = ({ onGermanSelected }) => {
       return !prev;
     });
   };
+  // whatsapp message
 
+  const openCloseWhatsappModal = () => {
+    setIsWhatsappOpen((prev) => {
+      return !prev;
+    });
+  };
+  // whatsapp message
+
+  const openCloseMessengerModal = () => {
+    setIsMessengerOpen((prev) => {
+      return !prev;
+    });
+  };
   return (
     <section
       className={`${classes["contact__container"]} container`}
@@ -56,7 +75,10 @@ const Contact = ({ onGermanSelected }) => {
       <div className={classes["form__container"]}>
         <div className={classes["form__container-left"]}>
           <p>Talk to me</p>
-          <div className={classes["left__containers"]}>
+          <div
+            onClick={openCloseWhatsappModal}
+            className={classes["left__containers"]}
+          >
             <span className={classes["big-size"]}>
               <i class="uil uil-whatsapp"></i>
             </span>
@@ -71,7 +93,10 @@ const Contact = ({ onGermanSelected }) => {
               <i class="uil uil-facebook-messenger"></i>
             </span>
             <h3> Messenger</h3>
-            <div className={classes["left__containers-text"]}>
+            <div
+              onClick={openCloseMessengerModal}
+              className={classes["left__containers-text"]}
+            >
               <p>Write me </p>
               <i class="uil uil-arrow-right"></i>
             </div>
@@ -112,31 +137,35 @@ const Contact = ({ onGermanSelected }) => {
                 placeholder="Write your ideas here"
               />
             </span>
-
-            <input className={classes["sub-btn"]} type="submit" value="Send" />
+            <input
+              className={classes["sub-btn"]}
+              type="submit"
+              value="Send"
+            ></input>{" "}
           </form>
         </div>
       </div>
       {/* Modal when message sent */}
       {ReactDOM.createPortal(
-        <>
-          {isModalOpen && (
-            <div className={classes["overlay-textBox"]}>
-              <div className={classes["text-box"]}>
-                <span className={classes["close-icon"]}>
-                  {" "}
-                  <i onClick={closeModal} class="uil uil-times-circle"></i>
-                </span>
+        isModalOpen && <MessageSentModal onCloseModal={closeModal} />,
 
-                <div className={classes["text-box-intro"]}>
-                  <h3>Thank you</h3>
-                  <p>Your message has been sent</p>
-                </div>
-                <div className={classes["services-list"]}></div>
-              </div>
-            </div>
-          )}
-        </>,
+        document.getElementById("modal")
+      )}
+      {/* Modal when Whatsapp clicked */}
+      {ReactDOM.createPortal(
+        isWhatsappOpen && (
+          <Whatsapp onOpenCloseWhatsapp={openCloseWhatsappModal} />
+        ),
+
+        document.getElementById("modal")
+      )}
+
+      {/* Modal when Messenger clicked */}
+      {ReactDOM.createPortal(
+        isMessengerOpen && (
+          <FBMessenger onOpenCloseMessenger={openCloseMessengerModal} />
+        ),
+
         document.getElementById("modal")
       )}
     </section>

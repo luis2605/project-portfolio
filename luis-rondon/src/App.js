@@ -9,6 +9,7 @@ import Qualifications from "./components/qualifications/Qualifications";
 import Portfolio from "./components/portfolio/Portfolio";
 import Testimonials from "./components/testimonials/Testimonials";
 import Contact from "./components/contact/Contact";
+import Footer from "./components/footer/Footer.js";
 
 function App() {
   const [germanSelected, setGermanSelected] = useState(false);
@@ -31,6 +32,7 @@ function App() {
       <Portfolio onGermanSelected={germanSelected} />
       <Testimonials onGermanSelected={germanSelected} />
       <Contact onGermanSelected={germanSelected} />
+      <Footer onGermanSelected={germanSelected} />
     </>
   );
 }
