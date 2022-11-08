@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/project-portfolio/static/css/main.e4b556b0.css",
+    "main.css": "/project-portfolio/static/css/main.c000315b.css",
     "main.js": "/project-portfolio/static/js/main.b686ba11.js",
     "static/js/787.de260430.chunk.js": "/project-portfolio/static/js/787.de260430.chunk.js",
     "static/media/Momentum.PNG": "/project-portfolio/static/media/Momentum.212669f6af0415f32d29.PNG",
@@ -35,12 +35,12 @@
     "index.html": "/project-portfolio/index.html",
     "static/media/frontendmentor.webp": "/project-portfolio/static/media/frontendmentor.41ba014014059dca5833.webp",
     "static/media/facebook-messenger-white-logo.svg": "/project-portfolio/static/media/facebook-messenger-white-logo.ef9b67a574436c90a8edae8316fe1769.svg",
-    "main.e4b556b0.css.map": "/project-portfolio/static/css/main.e4b556b0.css.map",
+    "main.c000315b.css.map": "/project-portfolio/static/css/main.c000315b.css.map",
     "main.b686ba11.js.map": "/project-portfolio/static/js/main.b686ba11.js.map",
     "787.de260430.chunk.js.map": "/project-portfolio/static/js/787.de260430.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e4b556b0.css",
+    "static/css/main.c000315b.css",
     "static/js/main.b686ba11.js"
   ]
 }
