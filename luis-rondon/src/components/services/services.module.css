@@ -132,7 +132,10 @@
 @media (max-width: 425px) {
   .text-box {
     position: absolute;
-    top: 10vh;
+    top: 10px;
+    bottom: 10px;
+    align-items: center;
+    justify-content: space-evenly;
   }
 }
 

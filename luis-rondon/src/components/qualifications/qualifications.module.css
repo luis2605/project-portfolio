@@ -159,6 +159,14 @@
     align-items: flex-start;
   }
   .cv-tabs {
-    margin-left: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1em 2em;
+    padding-left: 0.5em;
+    border-left: 2px solid var(--text-color);
+  }
+  .cv-tabs::before {
+    display: none;
   }
 }
