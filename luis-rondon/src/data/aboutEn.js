@@ -9,7 +9,7 @@ const aboutEn = [
       </span>
     ),
     description:
-      "I 've created many web pages with friendly UI/UX user interface.Still learning...a",
+      "I 've created many web pages with friendly UI/UX user interface and try to learn something new every time",
   },
   {
     title: "Completed",
